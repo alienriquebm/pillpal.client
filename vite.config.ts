@@ -1,7 +1,7 @@
-import { resolve } from "path";
-import { defineConfig, type UserConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
+import { resolve } from 'path';
+import { defineConfig, type UserConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,14 +12,14 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: "@",
-        replacement: resolve(__dirname, "./src"),
+        find: '@',
+        replacement: resolve(__dirname, './src'),
       },
     ],
   },
   test: {
-    environment: "jsdom",
+    environment: 'jsdom',
     globals: true,
-    setupFiles: "./test.setup.ts",
+    setupFiles: './test.setup.ts',
   },
 } as UserConfig);

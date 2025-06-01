@@ -1,0 +1,14 @@
+// tsconfig.eslint.json
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "vite.config.ts",
+    "vite-env.d.ts",
+    "eslint.config.js"
+  ],
+  "references": []
+}
