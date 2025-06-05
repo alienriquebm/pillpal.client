@@ -6,3 +6,8 @@ export interface IAuthContext {
   login?: (userData: ILoginForm) => void;
   logout?: () => void;
 }
+
+export interface IAuthResponse {
+  token: string;
+  user: IUser;
+}

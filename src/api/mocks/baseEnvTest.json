@@ -1,7 +1,7 @@
 {
   "uuid": "b0bf73b8-d987-4c89-bd98-2b251df163d6",
   "lastMigration": 33,
-  "name": "BaseEnvTest",
+  "name": "AebmBaseClientEnvTest",
   "endpointPrefix": "",
   "latency": 0,
   "port": 4000,
