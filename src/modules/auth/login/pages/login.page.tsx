@@ -1,6 +1,8 @@
 import LoginForm from '../components/login-form';
+import { useCheckSessionExpired } from '../hooks/use-check-session-expired';
 
 export function LoginPage() {
+  useCheckSessionExpired();
   return (
     <div className="flex min-h-screen">
       <div className="hidden md:flex w-1/2 bg-cyan-500 justify-center items-center text-white">

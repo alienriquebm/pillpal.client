@@ -1,4 +1,4 @@
-import { useGetTestList } from '../hooks/useGetTestList';
+import { useGetTestList } from '../hooks/use-get-test-list';
 
 export function DashboardPage() {
   const { data, isLoading } = useGetTestList();

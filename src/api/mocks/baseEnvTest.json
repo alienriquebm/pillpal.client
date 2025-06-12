@@ -64,6 +64,67 @@
           "default": true,
           "crudKey": "id",
           "callbacks": []
+        },
+        {
+          "uuid": "545e2a30-e9af-4de0-b4f8-42b091bce643",
+          "body": " {\n        \"status\": \"error\",\n        \"message\": \"Invalid test data\",\n        \"errors\": {\n            \"username\": \"Username must be at least 5 characters long\"\n        }\n    }",
+          "latency": 0,
+          "statusCode": 403,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "showError",
+              "value": "true",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "cce78499-35d2-4e06-9baf-1daeb94eaaf2",
+          "body": "{ \"message\": \"Unauthorized\" }\n",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "Bearer my-valid-token",
+              "invert": true,
+              "operator": "equals"
+            },
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "",
+              "invert": false,
+              "operator": "null"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
       "responseMode": null,
@@ -98,9 +159,9 @@
         },
         {
           "uuid": "6acd594e-2dc4-461c-89f2-b05ab0197f09",
-          "body": "{ \"message\": \"Unauthorized\" }\n",
+          "body": "{ \"message\": \"User or Password incorrect\" }\n",
           "latency": 0,
-          "statusCode": 401,
+          "statusCode": 403,
           "label": "",
           "headers": [],
           "bodyType": "INLINE",

@@ -5,6 +5,7 @@ export const initialState: IAuthContext = {
   user: undefined,
   login: () => {},
   logout: () => {},
+  updateLoggedUser: () => {},
 };
 
 export const AuthContext = createContext(initialState);
