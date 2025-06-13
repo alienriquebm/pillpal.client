@@ -13,4 +13,5 @@ This template provides a minimal setup to get React working in Vite with HMR and
   - Use of react-router-dom V6
   - Public, private routes handlers
   - Auth made easy with context + axios
+  - @casl/react for role ability
 - React Query
