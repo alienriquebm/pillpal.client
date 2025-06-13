@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useAuth } from '../hooks/use-auth';
 import { Navigate } from 'react-router-dom';
-import { LOGIN_ROUTE } from './routes';
+import { LOGIN_EXPIRED_SESSION_ROUTE } from './routes';
 import useVerifyToken from '../hooks/use-validate-token';
 import { Spin } from 'antd';
 
@@ -17,5 +17,5 @@ export const PrivateRoute = ({ children }: { children: ReactNode }) => {
     );
   }
 
-  return user ? <>{children}</> : <Navigate to={LOGIN_ROUTE} replace />;
+  return user ? <>{children}</> : <Navigate to={LOGIN_EXPIRED_SESSION_ROUTE} replace />;
 };

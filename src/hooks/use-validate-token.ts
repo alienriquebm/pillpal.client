@@ -22,6 +22,8 @@ function useVerifyToken() {
         .catch(() => {
           setIsVerifyingToken(false);
           localStorage.removeItem('token');
+          localStorage.removeItem('user');
+          updateLoggedUser?.(null);
         });
     } else {
       setIsVerifyingToken(false);

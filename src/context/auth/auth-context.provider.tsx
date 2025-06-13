@@ -12,6 +12,7 @@ const LOCAL_STORAGE_TOKEN = 'token';
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [user, setUser] = useState<IUser | null>(() => {
     const storedUser = localStorage.getItem(LOCAL_STORAGE_USER);
     return storedUser ? (JSON.parse(storedUser) as IUser) : null;
@@ -27,6 +28,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const login = async ({ email, password }: ILoginForm) => {
     try {
+      setIsLoggingIn(true);
       const { data } = await apiAxiosInstance.post<IAuthResponse>('/auth/login', {
         email,
         password,
@@ -38,6 +40,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       navigate(DASHBOARD_ROUTE, { replace: true });
     } catch {
       setUser(null);
+    } finally {
+      setIsLoggingIn(false);
     }
   };
 
@@ -49,7 +53,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, updateLoggedUser }}>
+    <AuthContext.Provider value={{ user, login, logout, updateLoggedUser, isLoggingIn }}>
       {children}
     </AuthContext.Provider>
   );

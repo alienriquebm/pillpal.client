@@ -3,10 +3,9 @@ import { Button, Form, Input, type FormProps } from 'antd';
 import type { ILoginForm } from '../login.interfaces';
 
 export default function LoginForm() {
-  const { login } = useAuth();
+  const { login, isLoggingIn } = useAuth();
 
   const onFinish: FormProps<ILoginForm>['onFinish'] = values => {
-    console.log('Success:', values);
     if (login) {
       login(values);
     }
@@ -30,7 +29,7 @@ export default function LoginForm() {
       </Form.Item>
       <p className="text-center mt-3 text-xs font-bold text-slate-800">Forgot your password?</p>
       <div className="mt-6">
-        <Button type="primary" htmlType="submit" className="w-full">
+        <Button type="primary" htmlType="submit" className="w-full" loading={isLoggingIn}>
           Log in
         </Button>
       </div>

@@ -6,6 +6,7 @@ export interface IAuthContext {
   login?: (userData: ILoginForm) => void;
   logout?: () => void;
   updateLoggedUser?: (user: IUser | null) => void;
+  isLoggingIn?: boolean;
 }
 
 export interface IAuthResponse {
