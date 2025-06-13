@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "5.x",
+    "@casl/ability": "^6.7.3",
+    "@casl/react": "^5.0.0",
     "@tailwindcss/vite": "^4.1.8",
     "@tanstack/react-query": "^5.79.0",
     "antd": "^5.25.3",

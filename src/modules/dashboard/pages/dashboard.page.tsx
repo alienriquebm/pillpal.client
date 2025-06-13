@@ -1,8 +1,11 @@
+import { useAbility } from '../../../hooks/use-ability';
+import { ActionsEnum } from '../../../types/actions.enum';
+import { SubjectsEnum } from '../../../types/subjects.enum';
 import { useGetTestList } from '../hooks/use-get-test-list';
 
 export function DashboardPage() {
   const { data, isLoading } = useGetTestList();
-
+  const ability = useAbility();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -15,6 +18,9 @@ export function DashboardPage() {
       <h1>Dashboard Page</h1>
       <hr />
       <h3>Test List</h3>
+      {ability.can(ActionsEnum.manage, SubjectsEnum.Dashboard) && (
+        <button>Admin only button</button>
+      )}
       {data.map(item => (
         <div key={item.id} className="border p-4 mb-2">
           <p>
