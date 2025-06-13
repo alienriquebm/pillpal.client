@@ -1,5 +1,5 @@
 import type { ILoginForm } from '../../modules/auth/login/login.interfaces';
-import type { IUser } from '../../types/user.interface';
+import type { IUser } from '../../types/user.interfaces';
 
 export interface IAuthContext {
   user?: IUser | null;

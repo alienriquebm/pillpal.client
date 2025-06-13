@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from './use-auth';
 import { apiAxiosInstance } from '../api/config';
-import type { IUser } from '../types/user.interface';
+import type { IAuthResponse } from '../context/auth/auth-context.interfaces';
 
 function useVerifyToken() {
   const [isVerifyingToken, setIsVerifyingToken] = useState(true);
@@ -11,9 +11,9 @@ function useVerifyToken() {
     const tokenExists = localStorage.getItem('token');
     if (tokenExists && isVerifyingToken) {
       apiAxiosInstance
-        .get<IUser>('/auth/me')
+        .get<IAuthResponse>('/auth/me')
         .then(({ data }) => {
-          const user = data;
+          const { user } = data;
           if (user) {
             updateLoggedUser?.(user);
             setIsVerifyingToken(false);

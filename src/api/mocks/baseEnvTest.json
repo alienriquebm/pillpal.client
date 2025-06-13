@@ -140,7 +140,7 @@
       "responses": [
         {
           "uuid": "d1b5794a-2088-41a8-ab88-3083994bb8f9",
-          "body": "{\n  \"token\": \"my-valid-token\",\n  \"user\": {\n    \"id\": 1,\n    \"email\": \"{{ request.body.email }}\",\n    \"name\": \"Usuario de prueba\"\n  }\n}",
+          "body": "{\n  \"token\": \"my-valid-token\",\n  \"user\": {\n    \"id\": 1,\n    \"email\": \"{{ request.body.email }}\",\n    \"name\": \"Usuario de prueba\",\n    \"role\": \"admin\"\n  }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -198,7 +198,7 @@
       "responses": [
         {
           "uuid": "2be647cf-4619-4cd6-8233-b76c77ea96bb",
-          "body": "{\n  \"user\": {\n    \"id\": 1,\n    \"email\": \"{{ request.body.email }}\",\n    \"name\": \"Usuario de prueba\"\n  }\n} ",
+          "body": "{\n  \"user\": {\n    \"id\": 1,\n    \"email\": \"{{ request.body.email }}\",\n    \"name\": \"Usuario de prueba\",\n    \"role\": \"admin\"\n  }\n} ",
           "latency": 0,
           "statusCode": 200,
           "label": "",

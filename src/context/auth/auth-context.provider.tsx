@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-import type { IUser } from '../../types/user.interface';
+import type { IUser } from '../../types/user.interfaces';
 import { AuthContext } from './auth-context';
 import { LOGIN_ROUTE, DASHBOARD_ROUTE } from '../../routes/routes';
 import { apiAxiosInstance } from '../../api/config';
@@ -34,6 +34,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         password,
       });
       const { token, user } = data;
+      console.log('Login successful:', user);
       setUser(user);
       localStorage.setItem(LOCAL_STORAGE_USER, JSON.stringify(user));
       localStorage.setItem(LOCAL_STORAGE_TOKEN, token);
