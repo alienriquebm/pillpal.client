@@ -4,9 +4,9 @@ Object.defineProperty(window, 'matchMedia', {
     matches: false,
     media: query,
     onchange: null,
-    addListener: () => {}, // API legacy
+    addListener: () => {},
     removeListener: () => {},
-    addEventListener: () => {}, // API moderna
+    addEventListener: () => {},
     removeEventListener: () => {},
     dispatchEvent: () => false,
   }),

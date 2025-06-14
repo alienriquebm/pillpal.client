@@ -20,10 +20,12 @@
     "erasableSyntaxOnly": false,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"]
-    }
+      "@/*": ["src/*"],
+      "@test/*": ["test/*"]
+    },
+    "types": ["vitest", "@testing-library/jest-dom"]
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "src", "test"]
 }
