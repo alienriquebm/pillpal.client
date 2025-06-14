@@ -1,4 +1,4 @@
-import { useAuth } from '../../../../hooks/use-auth';
+import { useAuth } from '@/hooks/use-auth';
 import { Button, Form, Input, type FormProps } from 'antd';
 import type { ILoginForm } from '../login.interfaces';
 

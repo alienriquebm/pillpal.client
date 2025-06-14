@@ -1,5 +1,5 @@
+import type { HttpError } from '@/api/config';
 import { type FormInstance } from 'antd';
-import type { HttpError } from '../api/config';
 
 export const useInvalidateForm = (form: FormInstance) => {
   if (!form) {

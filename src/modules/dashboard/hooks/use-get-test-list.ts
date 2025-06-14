@@ -1,5 +1,5 @@
+import { apiAxiosInstance, type HttpError } from '@/api/config';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { apiAxiosInstance, type HttpError } from '../../../api/config';
 
 export interface IGetTestListResponse {
   id: string;

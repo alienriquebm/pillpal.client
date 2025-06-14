@@ -1,1 +1,1 @@
-export { TodosListPage } from './pages';
+export { DashboardPage } from './pages/dashboard.page';

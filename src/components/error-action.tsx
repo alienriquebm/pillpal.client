@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react';
 import { Button, Card, Typography } from 'antd';
 import { WarningOutlined } from '@ant-design/icons';
-import clsx from 'clsx';
-import type { HttpError } from '../api/config';
-import type { Nullable } from '../types/nullable.interfaces';
-
+import type { Nullable } from '@/types/nullable.interfaces';
+import type { HttpError } from '@/api/config';
+import cn from '@/helpers/cn';
 const { Title } = Typography;
 
 interface IErrorAction {
@@ -35,7 +34,7 @@ export const ErrorAction: React.FC<IErrorAction> = ({
   }, [error, message]);
 
   const classes = useMemo(
-    () => clsx({ 'border-0': borderless, 'bg-transparent': transparent }),
+    () => cn({ 'border-0': borderless, 'bg-transparent': transparent }),
     [borderless, transparent],
   );
 

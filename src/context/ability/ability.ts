@@ -1,8 +1,8 @@
+import { ActionsEnum } from '@/types/actions.enum';
+import { RolesEnum } from '@/types/roles.enum';
+import { SubjectsEnum } from '@/types/subjects.enum';
+import type { IUser } from '@/types/user.interfaces';
 import { AbilityBuilder, createMongoAbility, type MongoAbility } from '@casl/ability';
-import type { IUser } from '../../types/user.interfaces';
-import { RolesEnum } from '../../types/roles.enum';
-import { ActionsEnum } from '../../types/actions.enum';
-import { SubjectsEnum } from '../../types/subjects.enum';
 
 export type Actions = ActionsEnum;
 export type Subjects = SubjectsEnum;
@@ -16,13 +16,11 @@ export function defineAbilityFor(user?: IUser | null) {
     return build();
   }
 
-  // Ejemplo: reglas según el rol
   if (user.role === RolesEnum.ADMIN) {
     can(ActionsEnum.manage, SubjectsEnum.all);
   } else if (user.role === RolesEnum.USER) {
     can(ActionsEnum.read, SubjectsEnum.Dashboard);
   } else {
-    // Invitado
     can(ActionsEnum.read, SubjectsEnum.Dashboard);
   }
 

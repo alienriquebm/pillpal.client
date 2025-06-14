@@ -1,7 +1,7 @@
 import React from 'react';
 import { Can } from './can';
-import { ActionsEnum } from '../../types/actions.enum';
-import { SubjectsEnum } from '../../types/subjects.enum';
+import type { ActionsEnum } from '@/types/actions.enum';
+import type { SubjectsEnum } from '@/types/subjects.enum';
 
 interface CanRouteProps {
   I: ActionsEnum;

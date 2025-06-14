@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
-import { useAuth } from '../../hooks/use-auth';
 import { AbilityContext } from './ability-context';
 import { defineAbilityFor } from './ability';
-import useVerifyToken from '../../hooks/use-validate-token';
-import { LoadingScreen } from '../../components/loading-screen';
+import useVerifyToken from '@/hooks/use-validate-token';
+import { useAuth } from '@/hooks/use-auth';
+import { LoadingScreen } from '@/components/loading-screen';
 
 export function AbilityProvider({ children }: { children: React.ReactNode }) {
   const { isVerifyingToken } = useVerifyToken();

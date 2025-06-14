@@ -1,7 +1,7 @@
+import type { HttpError } from '@/api/config';
 import { ErrorAction } from './error-action';
-import { IS_PROD } from '../config';
 import type React from 'react';
-import type { HttpError } from '../api/config';
+import { IS_PROD } from '@/config';
 
 interface IErrorBoundaryMessage {
   error: HttpError;

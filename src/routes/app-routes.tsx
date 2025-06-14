@@ -9,7 +9,7 @@ import { SubjectsEnum } from '../types/subjects.enum';
 import NotFound from './components/not-found';
 import { RootRedirect } from './components/root-route';
 import NotAllowed from './components/not-allowed';
-import { CanRoute } from '../context/ability/can-route';
+import { CanRoute } from '@/context/ability/can-route';
 
 export default function AppRoutes() {
   return (

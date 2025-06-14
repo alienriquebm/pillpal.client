@@ -1,11 +1,11 @@
 import { Button } from 'antd';
-import { ErrorAction } from '../../../components/error-action';
-import { withErrorBoundary } from '../../../hoc/with-error-boundary';
-import { useAbility } from '../../../hooks/use-ability';
-import { ActionsEnum } from '../../../types/actions.enum';
-import { SubjectsEnum } from '../../../types/subjects.enum';
-import { DashboardLayout } from '../components/dashboard.layout';
+import { SubjectsEnum } from '@/types/subjects.enum';
 import { useGetTestList } from '../hooks/use-get-test-list';
+import { useAbility } from '@/hooks/use-ability';
+import { DashboardLayout } from '../components/dashboard.layout';
+import { ErrorAction } from '@/components/error-action';
+import { ActionsEnum } from '@/types/actions.enum';
+import { withErrorBoundary } from '@/hoc/with-error-boundary';
 
 function DashboardPageComponent() {
   const { data, isLoading, error, refetch } = useGetTestList();

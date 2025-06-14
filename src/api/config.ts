@@ -1,6 +1,6 @@
+import { API_URL } from '@/config';
 import { message } from 'antd';
 import axios, { AxiosError } from 'axios';
-import { API_URL } from '../config';
 
 export const apiAxiosInstance = axios.create({
   baseURL: API_URL,

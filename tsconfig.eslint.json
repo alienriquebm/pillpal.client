@@ -1,6 +1,12 @@
 // tsconfig.eslint.json
 {
   "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",

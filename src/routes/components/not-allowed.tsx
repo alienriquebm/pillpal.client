@@ -1,5 +1,4 @@
 export default function NotAllowed() {
-  console.log('NotAllowed component rendered');
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full text-center">
