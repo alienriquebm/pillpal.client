@@ -15,6 +15,7 @@
     "src/**/*.d.ts",
     "vite.config.ts",
     "vite-env.d.ts",
+    "vitest.config.ts",
     "eslint.config.js"
   ],
   "references": []
