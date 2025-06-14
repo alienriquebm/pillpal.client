@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { apiAxiosInstance } from '../../../api/config';
+import { apiAxiosInstance, type HttpError } from '../../../api/config';
 
 export interface IGetTestListResponse {
   id: string;
@@ -12,7 +12,7 @@ export interface IGetTestListResponse {
 }
 
 export const useGetTestList = () => {
-  return useQuery({
+  return useQuery<IGetTestListResponse[], HttpError>({
     queryFn: () =>
       apiAxiosInstance.get<IGetTestListResponse[]>(`/test-list`).then(({ data }) => data),
     queryKey: ['test-list'],

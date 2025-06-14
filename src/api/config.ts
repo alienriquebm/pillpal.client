@@ -1,8 +1,6 @@
 import { message } from 'antd';
 import axios, { AxiosError } from 'axios';
-
-const API_URL: string =
-  (import.meta.env.VITE_PUBLIC_API as string | undefined) || 'http://localhost:4000';
+import { API_URL } from '../config';
 
 export const apiAxiosInstance = axios.create({
   baseURL: API_URL,

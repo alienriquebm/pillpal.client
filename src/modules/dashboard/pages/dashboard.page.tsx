@@ -1,25 +1,43 @@
+import { Button } from 'antd';
+import { ErrorAction } from '../../../components/error-action';
+import { withErrorBoundary } from '../../../hoc/with-error-boundary';
 import { useAbility } from '../../../hooks/use-ability';
 import { ActionsEnum } from '../../../types/actions.enum';
 import { SubjectsEnum } from '../../../types/subjects.enum';
+import { DashboardLayout } from '../components/dashboard.layout';
 import { useGetTestList } from '../hooks/use-get-test-list';
 
-export function DashboardPage() {
-  const { data, isLoading } = useGetTestList();
+function DashboardPageComponent() {
+  const { data, isLoading, error, refetch } = useGetTestList();
   const ability = useAbility();
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <DashboardLayout>
+        <div>Loading...</div>
+      </DashboardLayout>
+    );
   }
+
+  if (error) {
+    return (
+      <DashboardLayout>
+        <ErrorAction error={error} onRetry={refetch} />
+      </DashboardLayout>
+    );
+  }
+
   if (!data) {
     return <div>No data available</div>;
   }
   console.log(data);
+
   return (
-    <div>
+    <DashboardLayout>
       <h1>Dashboard Page</h1>
       <hr />
       <h3>Test List</h3>
       {ability.can(ActionsEnum.manage, SubjectsEnum.Dashboard) && (
-        <button>Admin only button</button>
+        <Button type="primary">Admin only button</Button>
       )}
       {data.map(item => (
         <div key={item.id} className="border p-4 mb-2">
@@ -43,6 +61,8 @@ export function DashboardPage() {
           </p>
         </div>
       ))}
-    </div>
+    </DashboardLayout>
   );
 }
+
+export const DashboardPage = withErrorBoundary(DashboardPageComponent);
