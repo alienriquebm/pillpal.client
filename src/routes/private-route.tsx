@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
 import { LOGIN_EXPIRED_SESSION_ROUTE } from './routes';
-import useVerifyToken from '@/hooks/use-validate-token';
+import useVerifyToken from '@/hooks/use-verify-token';
 import { useAuth } from '@/hooks/use-auth';
 import { LoadingScreen } from '@/components/loading-screen';
 

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { AbilityContext } from './ability-context';
 import { defineAbilityFor } from './ability';
-import useVerifyToken from '@/hooks/use-validate-token';
+import useVerifyToken from '@/hooks/use-verify-token';
 import { useAuth } from '@/hooks/use-auth';
 import { LoadingScreen } from '@/components/loading-screen';
 
