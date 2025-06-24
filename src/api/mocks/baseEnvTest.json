@@ -180,7 +180,7 @@
           "uuid": "6acd594e-2dc4-461c-89f2-b05ab0197f09",
           "body": "{ \"message\": \"User or Password incorrect\" }\n",
           "latency": 0,
-          "statusCode": 403,
+          "statusCode": 401,
           "label": "",
           "headers": [],
           "bodyType": "INLINE",

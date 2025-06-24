@@ -40,7 +40,7 @@ apiAxiosInstance.interceptors.response.use(
   (error: AxiosError<HttpError>) => {
     const status = error.response?.status;
     console.log('Error response status:', status);
-    if (status && status !== 401) {
+    if (status) {
       let backendMsg: string = 'Ocurrió un error inesperado';
       const data = error.response?.data as { message?: string; error?: string } | undefined;
       if (data) {
